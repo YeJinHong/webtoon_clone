@@ -13,3 +13,5 @@
 ## 4월 3일
 - H2 Database 테스트용 코드 작성
 - @Slf4j관련 에러 발생 `error: cannot find symbol`
+
+(프로젝트 마지막 주 및 병원 내원으로 한동안 작성 X)
