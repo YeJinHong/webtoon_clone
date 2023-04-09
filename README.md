@@ -1,7 +1,7 @@
 # webtoon_clone
 
 front : vue / android   
-back : spring 
+back : springboot
 
 목표
  - MSA 구조 설계
