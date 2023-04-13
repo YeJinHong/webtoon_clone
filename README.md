@@ -16,7 +16,7 @@ back : springboot
  - 요구사항 명세서
  - API 명세서
  - 시스템 아키텍쳐 구성도
- - ERD 설계도
+ - [ERD 설계도](https://www.erdcloud.com/d/o9XHQKST4g6SEqQLr)
 
 강의
  - 인프런
