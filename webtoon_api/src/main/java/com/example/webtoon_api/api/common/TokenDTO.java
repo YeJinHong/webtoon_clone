@@ -1,10 +1,10 @@
 package com.example.webtoon_api.api.common;
 
+import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
+@Builder
 public class TokenDTO {
     private String AuthorizationHeader;
     private String RefreshHeader;
