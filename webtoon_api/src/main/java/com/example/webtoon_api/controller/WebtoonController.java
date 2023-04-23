@@ -7,6 +7,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/webtoons")
 public class WebtoonController {
     
+    @PostMapping(
+        path = ""
+    )
+    public BaseResponse<?> registerWebtoon(){
     
+    }
+    
+    @GetMapping(
+        path = "/weekday/{weekday}"
+    )
+    public List<WebtoonResponseDTO> getWebtoonList(){
+    
+    }
 
 }
