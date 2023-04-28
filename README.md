@@ -11,6 +11,7 @@ back : springboot
  - 핸드폰 실명 인증 구현
  - 추천 시스템  
  - JPA 활용 
+ - batch
 
 문서
  - 요구사항 명세서
