@@ -22,5 +22,8 @@ public class WebtoonController {
 //    public List<WebtoonResponseDTO> getWebtoonList(){
 //
 //    }
-
+//    @DeleteMapping
+//    public BaseResponse deleteWebtoon(@PathVariable String webtoonId){
+//    
+//    }
 }
