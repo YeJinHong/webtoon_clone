@@ -2,3 +2,8 @@ spring:
   profiles:
     group:
       local: key
+
+server:
+  port: 8082
+  servlet:
+    context-path: /api/v1
