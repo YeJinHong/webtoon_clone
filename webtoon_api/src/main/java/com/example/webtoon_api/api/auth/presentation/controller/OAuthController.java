@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.webtoon_api.api.auth.presentation.dto.KakaoTokenDTO;
+import com.example.webtoon_api.api.auth.presentation.dto.LoginUserInfoDTO;
 import com.example.webtoon_api.api.auth.service.impl.OAuthServiceImpl;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -32,6 +33,10 @@ public class OAuthController {
 	) {
 		// 1. 프론트에서 받은 kakao 인가 코드를 통해 kakao accessToken 발급
 		KakaoTokenDTO kakaoTokenDTO = oauthService.getAccessToken(code);
+		log.info("KakaoTokenDTO: {}", kakaoTokenDTO);
+
+		// 2. 발급받은 accessToken으로 카카오 회원 정보 확인 후 DB 저장 또는 로그인 (토큰 발급)
+		LoginUserInfoDTO loginUserInfoDTO = oauthService.saveUserOrLogin(kakaoTokenDTO.getAccessToken());
 
 		return null;
 	}

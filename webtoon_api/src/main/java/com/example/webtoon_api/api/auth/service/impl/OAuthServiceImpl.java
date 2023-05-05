@@ -10,6 +10,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.webtoon_api.api.auth.presentation.dto.KakaoTokenDTO;
+import com.example.webtoon_api.api.auth.presentation.dto.LoginUserInfoDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -63,5 +64,11 @@ public class OAuthServiceImpl implements OAuthService {
 		}
 
 		return kakaoTokenDTO;
+	}
+
+	@Override
+	public LoginUserInfoDTO saveUserOrLogin(String accessToken) {
+		// KakaoProfile profile = findProfile(accessToken);
+		return null;
 	}
 }
