@@ -7,8 +7,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.example.webtoon_api.entity.UserEntity;
-import com.example.webtoon_api.repository.UserRepository;
+import com.example.webtoon_api.api.user.persistence.entity.UserEntity;
+import com.example.webtoon_api.api.user.persistence.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

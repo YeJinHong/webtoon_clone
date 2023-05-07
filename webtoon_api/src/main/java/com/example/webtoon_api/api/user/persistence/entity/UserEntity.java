@@ -1,4 +1,4 @@
-package com.example.webtoon_api.entity;
+package com.example.webtoon_api.api.user.persistence.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

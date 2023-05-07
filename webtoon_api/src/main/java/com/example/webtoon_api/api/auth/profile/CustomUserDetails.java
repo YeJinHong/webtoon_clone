@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.example.webtoon_api.entity.UserEntity;
+import com.example.webtoon_api.api.user.persistence.entity.UserEntity;
 
 public class CustomUserDetails implements UserDetails {
 

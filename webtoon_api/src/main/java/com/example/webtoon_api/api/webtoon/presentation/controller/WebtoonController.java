@@ -1,4 +1,4 @@
-package com.example.webtoon_api.controller;
+package com.example.webtoon_api.api.webtoon.presentation.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
