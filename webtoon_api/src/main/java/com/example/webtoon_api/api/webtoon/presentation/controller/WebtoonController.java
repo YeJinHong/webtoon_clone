@@ -1,18 +1,34 @@
 package com.example.webtoon_api.api.webtoon.presentation.controller;
 
+import com.example.webtoon_api.api.common.BaseResponse;
+import com.example.webtoon_api.api.webtoon.presentation.dto.WebtoonRegisterDTO;
+import com.example.webtoon_api.api.webtoon.service.impl.WebtoonService;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "웹툰 Controller")
+@Slf4j
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/v1/webtoons")
 public class WebtoonController {
-	// 웹툰 등록
-	// @PostMapping(
-	//     path = ""
-	// )
-	// public BaseResponse<?> registerWebtoon(){
-	//
-	// }
+
+    private final WebtoonService webtoonService;
+
+	 // 연재 대기 상태의 웹툰 등록
+	 @PostMapping(
+	     path = ""
+	 )
+	 public ResponseEntity<WebtoonRegisterDTO> registerWebtoon(){
+
+	     return null;
+	 }
+
 	//
 	// 어떤 요일의 웹툰 리스트
 	// @GetMapping(
