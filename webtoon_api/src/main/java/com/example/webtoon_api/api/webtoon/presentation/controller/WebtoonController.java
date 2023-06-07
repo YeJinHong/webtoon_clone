@@ -1,7 +1,8 @@
 package com.example.webtoon_api.api.webtoon.presentation.controller;
 
-import com.example.webtoon_api.api.common.BaseResponse;
-import com.example.webtoon_api.api.webtoon.presentation.dto.WebtoonRegisterDTO;
+import com.example.webtoon_api.api.webtoon.presentation.dto.WebtoonRegisterRequestDTO;
+import com.example.webtoon_api.api.webtoon.presentation.dto.WebtoonRegisterResponseDTO;
+import com.example.webtoon_api.api.webtoon.presentation.validator.WebtoonValidator;
 import com.example.webtoon_api.api.webtoon.service.impl.WebtoonService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -21,17 +22,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class WebtoonController {
 
     private final WebtoonService webtoonService;
-//    private final WebtoonValidator webtoonValidator;
+    private final WebtoonValidator webtoonValidator;
 
 	 // 연재 대기 상태의 웹툰 등록
 	 @PostMapping(
 	     path = "",
 		 consumes = {MediaType.APPLICATION_JSON_VALUE}
 	 )
-	 public ResponseEntity<WebtoonRegisterDTO> registerWebtoon(
-			 @RequestParam WebtoonRegisterDTO webtoonRegisterDTO
+	 public ResponseEntity<WebtoonRegisterResponseDTO> registerWebtoon(
+			 @RequestParam WebtoonRegisterRequestDTO webtoonRegisterRequestDTO
 	 ){
-
+		webtoonValidator.validateWebtoonRequestDTO(webtoonRegisterRequestDTO);
 	     return null;
 	 }
 

@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-public class WebtoonRegisterDTO {
+public class WebtoonRegisterRequestDTO {
     @Schema(description = "웹툰 제목", defaultValue = "더블클릭")
     private String title;
     @Schema(description = "작가 Id", defaultValue = "author123")
