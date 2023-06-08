@@ -1,9 +1,11 @@
 package com.example.webtoon_api.api.webtoon.presentation.controller;
 
+import com.example.webtoon_api.api.vo.WebtoonRegisterSO;
 import com.example.webtoon_api.api.webtoon.presentation.dto.WebtoonRegisterRequestDTO;
 import com.example.webtoon_api.api.webtoon.presentation.dto.WebtoonRegisterResponseDTO;
 import com.example.webtoon_api.api.webtoon.presentation.validator.WebtoonValidator;
 import com.example.webtoon_api.api.webtoon.service.impl.WebtoonService;
+import com.example.webtoon_api.converter.WebtoonConverter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +25,7 @@ public class WebtoonController {
 
     private final WebtoonService webtoonService;
     private final WebtoonValidator webtoonValidator;
+    private final WebtoonConverter webtoonConverter;
 
 	 // 연재 대기 상태의 웹툰 등록
 	 @PostMapping(
@@ -32,7 +35,12 @@ public class WebtoonController {
 	 public ResponseEntity<WebtoonRegisterResponseDTO> registerWebtoon(
 			 @RequestParam WebtoonRegisterRequestDTO webtoonRegisterRequestDTO
 	 ){
+		 // DTO NOT NULL 검증
 		webtoonValidator.validateWebtoonRequestDTO(webtoonRegisterRequestDTO);
+
+		// 웹툰 등록 정보 DB 저장
+		 WebtoonRegisterSO webtoonRegisterSO = webtoonConverter.toWebtoonRegisterSO(webtoonRegisterRequestDTO);
+
 	     return null;
 	 }
 
