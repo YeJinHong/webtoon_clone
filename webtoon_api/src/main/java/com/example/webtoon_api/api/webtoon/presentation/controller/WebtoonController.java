@@ -4,7 +4,7 @@ import com.example.webtoon_api.api.vo.WebtoonRegisterSO;
 import com.example.webtoon_api.api.webtoon.presentation.dto.WebtoonRegisterRequestDTO;
 import com.example.webtoon_api.api.webtoon.presentation.dto.WebtoonRegisterResponseDTO;
 import com.example.webtoon_api.api.webtoon.presentation.validator.WebtoonValidator;
-import com.example.webtoon_api.api.webtoon.service.impl.WebtoonService;
+import com.example.webtoon_api.api.webtoon.service.impl.WebtoonServiceImpl;
 import com.example.webtoon_api.converter.WebtoonConverter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -23,26 +23,28 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/webtoons")
 public class WebtoonController {
 
-    private final WebtoonService webtoonService;
+    private final WebtoonServiceImpl webtoonService;
     private final WebtoonValidator webtoonValidator;
     private final WebtoonConverter webtoonConverter;
 
+    // TODO : 로그인 유저를 등록 유저로 설정
 	 // 연재 대기 상태의 웹툰 등록
-	 @PostMapping(
-	     path = "",
-		 consumes = {MediaType.APPLICATION_JSON_VALUE}
-	 )
-	 public ResponseEntity<WebtoonRegisterResponseDTO> registerWebtoon(
-			 @RequestParam WebtoonRegisterRequestDTO webtoonRegisterRequestDTO
-	 ){
-		 // DTO NOT NULL 검증
-		webtoonValidator.validateWebtoonRequestDTO(webtoonRegisterRequestDTO);
+	@PostMapping(
+	 path = "",
+	 consumes = {MediaType.APPLICATION_JSON_VALUE}
+	)
+	public ResponseEntity<WebtoonRegisterResponseDTO> registerWebtoon(
+		 @RequestParam WebtoonRegisterRequestDTO webtoonRegisterRequestDTO
+	){
+	 // DTO NOT NULL 검증
+	webtoonValidator.validateWebtoonRequestDTO(webtoonRegisterRequestDTO);
 
-		// 웹툰 등록 정보 DB 저장
-		 WebtoonRegisterSO webtoonRegisterSO = webtoonConverter.toWebtoonRegisterSO(webtoonRegisterRequestDTO);
+	// 웹툰 등록 정보 DB 저장
+	 WebtoonRegisterSO webtoonRegisterSO = webtoonConverter.toWebtoonRegisterSO(webtoonRegisterRequestDTO);
+	 WebtoonRegisterResponseDTO webttonRegisterResponseDTO = webtoonService.saveWebtoon(webtoonRegisterSO);
 
-	     return null;
-	 }
+	 return null;
+	}
 
 	 // 웹툰의 연재 상태 변경
 
