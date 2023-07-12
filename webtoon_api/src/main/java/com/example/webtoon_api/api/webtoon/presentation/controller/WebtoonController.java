@@ -62,4 +62,17 @@ public class WebtoonController {
 	//
 	// }
 	// 웹툰 정보 수정 (요일, 작가, 상태)
+	// @PatchMapping(
+	//  path = "/{webtoonId}",
+	//  consumes = {MediaType.APPLICATION_JASON_VALUE}
+	// )
+	// public ResponseEntity<WebtoonModifyResponseDTO> modifyWebtoon (
+	// 		@Pathvariable WebtoonModifyRequestDTO webtoonModifyRequestDTO
+	// ) {
+	//	webtoonValidator.validateWebtoonModifyRequestDTO(webtoonModifyRequestDTO);
+	//
+	//  // 웹툰 변경 정보 DB 반영
+	//
+	// return null
+	//}
 }
